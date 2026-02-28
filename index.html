@@ -41,6 +41,18 @@
             color: white;
         }
 
+        .company-logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid rgba(255,255,255,0.35);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         h1 {
             font-size: 3em;
             margin-bottom: 10px;
@@ -51,8 +63,17 @@
         .tagline {
             font-size: 1.3em;
             font-weight: 300;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             opacity: 0.95;
+        }
+
+        .inception-badge {
+            margin-top: 18px;
+        }
+
+        .inception-badge img {
+            height: 64px;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
         }
 
         h2 {
@@ -183,8 +204,12 @@
 <body>
     <header>
         <div class="container">
+            <img src="images/febris-logo.png" alt="Febris Therapeutics Logo" class="company-logo">
             <h1>FEBRIS THERAPEUTICS</h1>
             <p class="tagline">AI-Driven Therapeutics for Antibiotic-Resistant Infections & Sepsis</p>
+            <div class="inception-badge">
+                <img src="images/nvidia-inception-badge.png" alt="NVIDIA Inception Program Member">
+            </div>
         </div>
     </header>
 
