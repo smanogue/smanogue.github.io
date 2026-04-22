@@ -388,13 +388,19 @@
             <p>Febris Therapeutics is preparing to launch an equity crowdfunding campaign under <strong>Regulation Crowdfunding (Reg CF)</strong>, opening participation to both accredited and non-accredited investors as we advance our AI-designed therapeutics toward experimental validation.</p>
             <p>Join the waitlist to be notified when the campaign opens.</p>
 
-            <form action="https://formspree.io/f/xgornrvg" method="POST" style="margin-top: 25px; display: flex; flex-direction: column; gap: 12px; max-width: 480px;">
-                <input type="text" name="name" placeholder="Your name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; font-family: inherit;">
-                <input type="email" name="email" placeholder="Your email" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; font-family: inherit;">
+            <form id="crowdfunding-waitlist-form" action="https://formspree.io/f/xgornrvg" method="POST" style="margin-top: 25px; display: flex; flex-direction: column; gap: 12px; max-width: 480px;">
+                <input type="text" name="name" placeholder="Your name" required data-fs-field style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; font-family: inherit;">
+                <span data-fs-error="name" style="color: #c0392b; font-size: 0.9em;"></span>
+                <input type="email" name="email" placeholder="Your email" required data-fs-field style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; font-family: inherit;">
+                <span data-fs-error="email" style="color: #c0392b; font-size: 0.9em;"></span>
                 <input type="hidden" name="_subject" value="Febris crowdfunding waitlist signup">
                 <input type="hidden" name="list" value="crowdfunding-waitlist">
-                <button type="submit" style="padding: 14px; background: linear-gradient(120deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; font-size: 1.05em; font-weight: 600; cursor: pointer; font-family: inherit;">Join the Waitlist</button>
+                <button type="submit" data-fs-submit-btn style="padding: 14px; background: linear-gradient(120deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; font-size: 1.05em; font-weight: 600; cursor: pointer; font-family: inherit;">Join the Waitlist</button>
+                <span data-fs-error style="color: #c0392b; font-size: 0.95em; margin-top: 4px;"></span>
             </form>
+            <div data-fs-success style="display: none; margin-top: 25px; padding: 18px 22px; background: #e8f5ee; border-left: 4px solid #2e8b57; border-radius: 6px; color: #1e5631; max-width: 480px;">
+                <strong>Thanks — you're on the list.</strong> We'll email you when the Febris equity crowdfunding campaign opens.
+            </div>
 
             <p style="margin-top: 30px; font-size: 0.82em; color: #666; line-height: 1.5;"><em>This page does not constitute an offer to sell or a solicitation of an offer to buy securities, nor shall there be any sale of securities in any jurisdiction in which such offer, solicitation, or sale would be unlawful. Any securities offering by Febris Therapeutics, Inc. will be made only through an SEC-registered funding portal pursuant to Regulation Crowdfunding (17 CFR § 227). Investment in early-stage companies involves substantial risk, including the possibility of losing the entire amount invested. Forward-looking statements reflect current expectations and are subject to change without notice.</em></p>
         </div>
@@ -458,6 +464,12 @@
             <p style="margin-top: 10px; opacity: 0.8;">Advancing the fight against antibiotic-resistant infections and sepsis through AI-driven innovation.</p>
         </div>
     </footer>
+
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#crowdfunding-waitlist-form', formId: 'xgornrvg' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
 
